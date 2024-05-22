@@ -20,4 +20,6 @@ print("start")
 files = [f for f in os.listdir(try_images_path) if os.path.isfile(os.path.join(try_images_path, f))]
 print(len(files))
 for file in files:
-    print(file, ":", predict(try_images_path + "/" + file, loaded_encodings))
+    x = predict(try_images_path + "/" + file, loaded_encodings)
+    if x[0]:
+        print(file, ":", x)
